@@ -1,0 +1,5 @@
+git "file:///Users/alex/Dev/libs/RCKit" "0.1.1"
+git "file:///Users/alex/Dev/libs/RCRealm" "0.1.0"
+github "ReactiveX/RxSwift" "5.0.1"
+github "Swinject/Swinject" "2.6.2"
+github "realm/realm-cocoa" "v3.16.2"
