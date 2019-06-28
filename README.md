@@ -1,6 +1,8 @@
 # iOSAppArchitecture
 iOS app architecture example based on Clean Architecture.
 
+Repositorory doesn't have xcodeproj. It uses project.yml and Xcodegen utility.
+
 MVPCF - it is like Reactive MVP + Coordinator + Factory.
 Presenter is the same thing like ViewModel in MVVM, but different naming.
 ViewModel name uses for different approaches;
