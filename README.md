@@ -140,14 +140,13 @@ Coordinator builds screens (Modules) and controls flow.
   
   5. Differences from other architectures.
   
-  - MVVM and MVP 
-  MVPCF uses (MVVM and MVP) as a base architecture, and improves both with coordinators and factories.
-  - VIPER 
-  VIPER has Presenter as main Object of module, as well Router is not Obvious. 
+- MVVM and MVP. MVPCF uses (MVVM and MVP) as a base architecture, and improves both with coordinators and factories.
+
+- VIPER. It has Presenter as main Object of module, as well Router is not Obvious. 
   MVPCF has ViewController as main object of module, and Coordinator which handle navigation. 
   As well standard VIPER is not reactive from the box.
-  - RIBs
-  Interactor in RIBs is main object of module, but MVPCF has ViewController as main object. 
+  
+- RIBs. Interactor in RIBs is main object of module, but MVPCF has ViewController as main object. 
   Our approach are more obvious for typical developers
   
   
