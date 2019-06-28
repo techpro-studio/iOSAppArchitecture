@@ -62,12 +62,12 @@ Coordinator builds screens (Modules) and controls flow.
  
   protocol <Name>Presenter {
     var searchInput: BehaviorRelay<String?> { get }
-    var searchResults: BehaviorRelay<[String]> { get }
+    var searchResults: BehaviorRelay<[<SomeCell>ViewModel]> { get }
     var nextButtonAvailable: BehaviorRelay<Bool> { get }
   }
   ```
   
-  - <Name>View - abstraction over view. It has default implementation inherited from UIView.
+  - <Name>View - abstraction for view. It has default implementation inherited from UIView.
   
   It contains custom view for ViewController.
   
