@@ -88,7 +88,7 @@ Coordinator builds screens (Modules) and controls flow.
   Basically the main building structure of screens.
   
   
-  4. Every Presenter's implementation injects Logic it needs.
+  4. Every Presenter's implementation injects units it needs.
   
   ```swift
   class Default<Name>Presenter: <Name>Presenter{
@@ -112,8 +112,8 @@ Coordinator builds screens (Modules) and controls flow.
   
   ```
   
-  Every Logic unit should have only 1 responsility!
-  It is very important thing to achieve flexibility!
+  Every unit should have only one responsility!
+  
   
   For example:
   
