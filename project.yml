@@ -1,0 +1,24 @@
+name: AppArchitecture
+targets:
+  AppArchitecture:
+    type: application
+    platform: iOS
+    deploymentTarget: "9.0"
+    sources: [AppArchitecture]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.wolvessttudio.example
+      configs:
+        Debug:
+          debug
+        Release:
+          release
+    dependencies:
+      - carthage: RCRealm
+      - carthage: RCKit 
+      - carthage: Realm
+      - carthage: RealmSwift
+      - carthage: RxSwift
+      - carthage: RxCocoa
+      - carthage: RxRelay
+      - carthage: Swinject

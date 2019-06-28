@@ -16,7 +16,7 @@ Carthage/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-
+*.xcodeproj
 ## Other
 *.moved-aside
 *.xccheckout
