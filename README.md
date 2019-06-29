@@ -53,7 +53,7 @@ Abstraction for Routes of the Module. ViewController implements this protocol.
 ### Presenter
  Abstraction for Presenter. It has default implementation.
   It contains a logic of the presentation. It has the bindings for input and output.
-  Presenter contains structures called (ViewModels) as well as plain types, ready to use in View. 
+  Presenter contains structures called ViewModel as well as plain types, ready to use in View. 
  
  ```swift
  
@@ -89,7 +89,7 @@ Inherired from UIViewController Implements Routes protocol.
   - binding Presenter to View;
   - registering for events as a button tap; 
   - firing Routes closures. 
-  Basically the main building structure of screens.
+  Basically it is the main building structure of screens.
   
   
   ## 4. Every Presenter's implementation injects units it needs.
