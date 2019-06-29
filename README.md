@@ -92,7 +92,7 @@ Inherired from UIViewController Implements Routes protocol.
   Basically it is the main building structure of screens.
   
   
-  ## 4. Every Presenter's implementation injects units it needs.
+## 4. Every Presenter's implementation injects dependencies it needs.
   
   ```swift
   class Default<Name>Presenter: <Name>Presenter{
@@ -116,7 +116,7 @@ Inherired from UIViewController Implements Routes protocol.
   
   ```
   
-  Every unit should have only one responsibility!
+  Every dependency should have only one responsibility!
   
   
   For example:
