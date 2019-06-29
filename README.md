@@ -116,7 +116,7 @@ Inherired from UIViewController Implements Routes protocol.
   
   ```
   
-  Every unit should have only one responsility!
+  Every unit should have only one responsibility!
   
   
   For example:
