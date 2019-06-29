@@ -12,11 +12,11 @@ SOLID principles are the core of our architecture.
 
 For our architecture, we created a pretty simple and small library [RCKit](https://github.com/wolvesstudio/RCKit) aka Reactive Clean Kit, that contains everything we need for building an app using this architecture.
 
-1. For assembling project we use DI pattern with [Swinject](https://github.com/Swinject/Swinject) library.
+## 1. For assembling project we use DI pattern with [Swinject](https://github.com/Swinject/Swinject) library.
 
 App has shared [Container](https://github.com/Swinject/Swinject/blob/master/Documentation/DIContainer.md) where we register all shared dependencies we need to use across the whole app.
 
-2. Project is divided up into Flows
+## 2. Project is divided up into Flows
 
 Every flow has its own folder.
 Every flow has its "manager" called [Coordinator](https://github.com/wolvesstudio/RCKit/blob/master/Sources/RCKit/Coordinator/Coordinator.swift).
@@ -30,16 +30,18 @@ Coordinator builds the screens (Modules) and controls the flow.
 
 The only exception is a main ApplicationCoordinator that accepts UIWindow instead of container.
 
-3. Every Module for [example](https://github.com/wolvesstudio/iOSAppArchitecture/tree/master/AppArchitecture/Flows/MainMenuFlow/List) has the following structure:
+## 3. Every Module for [example](https://github.com/wolvesstudio/iOSAppArchitecture/tree/master/AppArchitecture/Flows/MainMenuFlow/List) has the following structure:
 
-- <Name>Factory - abstraction for creation anything. Factory is very important part of this architecture, because it injects dependencies. [BaseFactory](https://github.com/wolvesstudio/RCKit/blob/master/Sources/RCKit/BaseFactory.swift) contains Container we use to inject dependencies that we need. Factory can be used for Modules as well as building Cells, NSOperations, etc where we need to inject something. We can inject factories where we need and it gives us a lot of flexibility!
+### Factory 
+  Abstraction for creation anything. Factory is very important part of this architecture, because it injects dependencies. [BaseFactory](https://github.com/wolvesstudio/RCKit/blob/master/Sources/RCKit/BaseFactory.swift) contains Container we use to inject dependencies that we need. Factory can be used for Modules as well as building Cells, NSOperations, etc where we need to inject something. We can inject factories where we need and it gives us a lot of flexibility!
   
 ```swift
   protocol <Name>Factory {
     func make()-> <Name>Routes
   } 
 ```
-- <Name>Routes - abstraction for Routes of the Module. ViewController implements this protocol.
+### Routes
+Abstraction for Routes of the Module. ViewController implements this protocol.
  Closures fire in Coordinator and Coordinator performs what is needed.
  ```swift
     protocol <Name>Routes: ModuleRoutes {
@@ -48,7 +50,8 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
     }
   ```
  
- - <Name>Presenter - abstraction for Presenter. It has default implementation.
+### Presenter
+ Abstraction for Presenter. It has default implementation.
   It contains a logic of the presentation. It has the bindings for input and output.
   Presenter contains structures called (ViewModels) as well as plain types, ready to use in View. 
  
@@ -67,7 +70,8 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
   }
   ```
   
-  - <Name>View - abstraction for view. It has default implementation inherited from UIView.
+### View 
+Abstraction for view. It has default implementation inherited from UIView.
   
   It contains custom view for ViewController.
   
@@ -78,8 +82,8 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
     }
   ```
   
- - <Name>ViewController 
-  ViewController itself. Inherired from UIViewController Implements Routes protocol.
+### ViewController
+Inherired from UIViewController Implements Routes protocol.
   
   It is responsible for:
   - binding Presenter to View;
@@ -88,7 +92,7 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
   Basically the main building structure of screens.
   
   
-  4. Every Presenter's implementation injects units it needs.
+  ## 4. Every Presenter's implementation injects units it needs.
   
   ```swift
   class Default<Name>Presenter: <Name>Presenter{
@@ -138,7 +142,7 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
   }
   ```
   
-  5. Differences from the other architectures.
+ ## 5. Differences from the other architectures.
   
 - MVVM and MVP. MVPCF uses MVVM and MVP as a base architecture and improves both with coordinators and factories;
 
