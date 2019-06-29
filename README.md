@@ -28,7 +28,7 @@ Coordinator uses one container viewcontroller like (UINavigationController/ UISp
 
 Coordinator builds the screens (Modules) and controls the flow.
 
-The only exception is a main ApplicationCoordinator that accepts UIWindow instead of container.
+The only exception is a main ApplicationCoordinator that accepts UIWindow instead of container ViewController.
 
 ## 3. Every Module for [example](https://github.com/wolvesstudio/iOSAppArchitecture/tree/master/AppArchitecture/Flows/MainMenuFlow/List) has the following structure:
 
