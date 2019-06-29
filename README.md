@@ -24,7 +24,7 @@ Every flow has its own DI [Container](https://github.com/Swinject/Swinject/blob/
 
 This object is responsible for handling navigation through the application, handling push notifications, and other routing actions.
 
-Coordinator uses one container viewcontroller like (UINavigationController/ UISplitViewController)
+Coordinator uses one container viewcontroller like UINavigationController or UISplitViewController.
 
 Coordinator builds the screens (Modules) and controls the flow.
 
