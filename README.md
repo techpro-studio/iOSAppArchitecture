@@ -10,7 +10,7 @@ ViewModel name is used for a different approach;
 
 SOLID principles are the core of our architecture.
 
-For our architecture, we created a pretty simple and small library [RCKit](https://github.com/wolvesstudio/RCKit) aka Reactive Clean Kit, that contains everything we need for building an app using this architecture.
+For our architecture, we created a pretty simple and small library [RCKit](https://github.com/techpro-studio/RCKit) aka Reactive Clean Kit, that contains everything we need for building an app using this architecture.
 
 ## 1. For assembling project we use DI pattern with [Swinject](https://github.com/Swinject/Swinject) library.
 
@@ -19,7 +19,7 @@ App has shared [Container](https://github.com/Swinject/Swinject/blob/master/Docu
 ## 2. Project is divided up into Flows
 
 Every flow has its own folder.
-Every flow has its "manager" called [Coordinator](https://github.com/wolvesstudio/RCKit/blob/master/Sources/RCKit/Coordinator/Coordinator.swift).
+Every flow has its "manager" called [Coordinator](https://github.com/techpro-studio/RCKit/blob/master/Sources/RCKit/Coordinator/Coordinator.swift).
 Every flow has its own DI [Container](https://github.com/Swinject/Swinject/blob/master/Documentation/DIContainer.md) that contains specific dependencies for the flow.
 
 This object is responsible for handling navigation through the application, handling push notifications, and other routing actions.
@@ -33,7 +33,7 @@ The only exception is a main ApplicationCoordinator that accepts UIWindow instea
 ## 3. Every Module for [example](https://github.com/wolvesstudio/iOSAppArchitecture/tree/master/AppArchitecture/Flows/MainMenuFlow/List) has the following structure:
 
 ### Factory 
-  Abstraction for creation anything. Factory is very important part of this architecture, because it injects dependencies. [BaseFactory](https://github.com/wolvesstudio/RCKit/blob/master/Sources/RCKit/BaseFactory.swift) contains Container we use to inject dependencies that we need. Factory can be used for Modules as well as building Cells, NSOperations, etc where we need to inject something. We can inject factories where we need and it gives us a lot of flexibility!
+  Abstraction for creation anything. Factory is very important part of this architecture, because it injects dependencies. [BaseFactory](https://github.com/techpro-studio/RCKit/blob/master/Sources/RCKit/BaseFactory.swift) contains Container we use to inject dependencies that we need. Factory can be used for Modules as well as building Cells, NSOperations, etc where we need to inject something. We can inject factories where we need and it gives us a lot of flexibility!
   
 ```swift
   protocol <Name>Factory {
