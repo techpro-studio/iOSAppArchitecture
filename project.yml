@@ -7,7 +7,7 @@ targets:
     sources: [AppArchitecture]
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.wolvessttudio.example
+        PRODUCT_BUNDLE_IDENTIFIER: studio.techpro.example.ios
       configs:
         Debug:
           debug
