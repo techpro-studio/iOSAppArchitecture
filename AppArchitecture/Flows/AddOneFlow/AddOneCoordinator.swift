@@ -12,7 +12,7 @@ import Swinject
 import RCKit
 
 
-class AddOneCoordinator: BaseCoordinator{
+class AddOneCoordinator: BaseCoordinator, UIAdaptivePresentationControllerDelegate{
     
     private unowned var source: UIViewController
     
@@ -32,6 +32,12 @@ class AddOneCoordinator: BaseCoordinator{
     override func start() {
         self.runMain()
     }
+
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        self.stop {[weak self] in
+            self?.finished(nil)
+        }
+    }
     
     func runMain(){
         let view = self.container.resolve(AddOneFactory.self)!.make()
@@ -50,6 +56,7 @@ class AddOneCoordinator: BaseCoordinator{
         
         navigationController = UINavigationController(rootViewController: view.viewController)
         source.present(navigationController, animated: true, completion: nil)
+        navigationController.presentationController?.delegate = self
     }
     
 }

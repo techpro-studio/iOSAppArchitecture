@@ -17,11 +17,14 @@ protocol ListFactory {
 
 
 
-class DefaultListFactory: BaseFactory, ListFactory {
+struct DefaultListFactory: ListFactory {
+
+    let modelManager: ModelManager
+    let reachabilityManager: ReachabilityManager
     
     func make() -> ListRoutes {
         return ListViewController(
-            presenter: DefaultListViewPresenter(reachabilityManager: container.resolve(ReachabilityManager.self)!, modelManager: container.resolve(ModelManager.self)!),
+            presenter: DefaultListViewPresenter(reachabilityManager: reachabilityManager, modelManager: modelManager),
             view: DefaultListView()
         )
     }

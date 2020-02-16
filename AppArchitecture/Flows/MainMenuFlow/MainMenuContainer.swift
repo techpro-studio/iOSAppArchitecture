@@ -52,11 +52,11 @@ func buildMainMenuContainer(parent: Container)->Container{
     }
     
     container.register(ListFactory.self) { (resolver) -> ListFactory in
-        return DefaultListFactory(container: resolver as! Container)
+        return DefaultListFactory(modelManager: resolver.resolve(ModelManager.self)!, reachabilityManager: resolver.resolve(ReachabilityManager.self)!)
     }
     
     container.register(DetailFactory.self) { (resolver) -> DetailFactory in
-        return DefaultDetailFactory(container: resolver as! Container)
+        return DefaultDetailFactory(modelManager: resolver.resolve(ModelManager.self)!)
     }
     
     

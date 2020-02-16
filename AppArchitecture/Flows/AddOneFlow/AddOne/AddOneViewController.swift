@@ -10,7 +10,7 @@ import UIKit
 import RCKit
 import RxSwift
 
-class AddOneViewController: UIViewController, AddOneRoutes {
+class AddOneViewController: UIViewController, AddOneRoutes, UIAdaptivePresentationControllerDelegate {
 
     var canceled: (() -> Void)!
     var finished: ((String) -> Void)!
@@ -26,6 +26,7 @@ class AddOneViewController: UIViewController, AddOneRoutes {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
 
     private let disposeBag = DisposeBag()
 

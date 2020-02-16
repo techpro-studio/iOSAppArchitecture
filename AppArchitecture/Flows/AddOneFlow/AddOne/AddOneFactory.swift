@@ -16,10 +16,14 @@ protocol AddOneFactory {
 
 
 
-class DefaultAddOneFactory: BaseFactory, AddOneFactory{
+struct DefaultAddOneFactory: AddOneFactory{
+
+    let modelManager: ModelManager
+    let reachabilityManager: ReachabilityManager
+
     func make() -> AddOneRoutes {
         return AddOneViewController(
-            presenter: DefaultAddOnePresenter(modelManager: self.container.resolve(ModelManager.self)!, reachabilityManager: self.container.resolve(ReachabilityManager.self)!),
+            presenter: DefaultAddOnePresenter(modelManager: modelManager, reachabilityManager: reachabilityManager),
             viewContainer: DefaultAddOneView()
         )
     }
