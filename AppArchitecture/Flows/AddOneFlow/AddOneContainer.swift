@@ -14,7 +14,7 @@ func buildAddOneContainer(parent: Container)->Container{
     let container = Container(parent: parent)
     
     container.register(AddOneFactory.self) { (resolver) -> AddOneFactory in
-        return DefaultAddOneFactory(modelManager: resolver.resolve(ModelManager.self)!, reachabilityManager: resolver.resolve(ReachabilityManager.self)!)
+        return DefaultAddOneFactory(container: resolver as! Container)
     }
     
     return container

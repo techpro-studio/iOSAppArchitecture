@@ -14,11 +14,10 @@ protocol DetailFactory {
 }
 
 
-struct DefaultDetailFactory:  DetailFactory {
-    let modelManager: ModelManager
+class DefaultDetailFactory: BaseFactory, DetailFactory {
 
     func make(id: String) -> DetailRoutes {
-        let presenter = DefaultDetailPresenter(modelManager: modelManager)
+        let presenter = DefaultDetailPresenter(modelManager: container.resolve(ModelManager.self)!)
         presenter.setup(id: id)
         let viewController = DetailViewController(presenter: presenter, view: DefaultDetailView())
         return viewController
