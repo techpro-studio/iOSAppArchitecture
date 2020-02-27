@@ -22,7 +22,7 @@ protocol ListViewPresenter: ErrorThrowablePresenter, LoadablePresenter, Disposab
 
 
 
-class DefaultListViewPresenter:  ListViewPresenter{
+class DefaultListViewPresenter:  ListViewPresenter {
 
     var isLoading: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     

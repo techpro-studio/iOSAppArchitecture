@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+Cartfile.resolved
 Carthage/
 ## Various settings
 *.pbxuser
